@@ -18,6 +18,7 @@ $(function(){
 	var section = $(".section"),
 		footer = $("footer"),
 		onConnect = $(".connected"),
+		chatclosed = $(".closed"),
 		inviteSomebody = $(".invite-textfield"),
 		personInside = $(".personinside"),
 		chatScreen = $(".chatscreen"),
