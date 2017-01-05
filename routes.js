@@ -6,7 +6,6 @@
 
 var gravatar = require('gravatar');
 var admin = 0;
-
 // Export a function, so that we can pass 
 // the app and io instances from the app.js file:
 
@@ -42,7 +41,6 @@ module.exports = function(app,io){
 		// number of people in this chat room
 
 		socket.on('load',function(data){
-
 			var room = findClientsSocket(io,data);
 			if(room.length === 0 ) {
 				if (admin === 1) {
@@ -128,12 +126,9 @@ module.exports = function(app,io){
 				user: this.username,
 				avatar: this.avatar
 			});
-			if (chatters === 1){
-				admin=0;
-			}
+			admin = 0;
 			// leave the room
 			socket.leave(socket.room);
-			var chatters = this.room.length;
 		});
 
 
