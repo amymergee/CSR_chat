@@ -5,6 +5,7 @@
 // Use the gravatar module, to turn email addresses into avatar images:
 
 var gravatar = require('gravatar');
+var admin = 0;
 
 // Export a function, so that we can pass 
 // the app and io instances from the app.js file:
@@ -23,7 +24,7 @@ module.exports = function(app,io){
 		// var id = Math.round((Math.random() * 1000000));
 		// Open a specific room
 		var id = 100;
-
+		admin = 1;
 		// Redirect to the random room
 		res.redirect('/chat/'+id);
 	});
@@ -44,8 +45,12 @@ module.exports = function(app,io){
 
 			var room = findClientsSocket(io,data);
 			if(room.length === 0 ) {
-
-				socket.emit('peopleinchat', {number: 0});
+				if(admin === 1) {
+					socket.emit('peopleinchat', {number: 0});
+				}
+				else {
+					socket.emit('chatclosed');
+				}
 			}
 			else if(room.length === 1) {
 

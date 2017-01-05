@@ -55,6 +55,10 @@ $(function(){
 		img = data;
 	});
 
+	socket.on('chatclosed', function(){
+		showMessage("closed");
+	});
+
 	// receive the names and avatars of all people in the chat room
 	socket.on('peopleinchat', function(data){
 
