@@ -45,10 +45,10 @@ module.exports = function(app,io){
 
 			var room = findClientsSocket(io,data);
 			if(room.length === 0 ) {
-				if(admin === 1) {
+				if (admin === 1) {
 					socket.emit('peopleinchat', {number: 0});
 				}
-				else {
+				if (admin === 0) {
 					socket.emit('chatclosed');
 				}
 			}
