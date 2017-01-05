@@ -131,6 +131,7 @@ module.exports = function(app,io){
 
 			// leave the room
 			socket.leave(socket.room);
+			console.log(room.length);
 		});
 
 

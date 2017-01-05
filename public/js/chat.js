@@ -158,10 +158,6 @@ $(function(){
 
 			showMessage("somebodyLeft", data);
 			chats.empty();
-			data.number --;
-			if (data.number === 0){
-				admin = 0;
-			}
 		}
 
 	});
