@@ -128,10 +128,12 @@ module.exports = function(app,io){
 				user: this.username,
 				avatar: this.avatar
 			});
-
+			if (chatters === 1){
+				admin=0;
+			}
 			// leave the room
 			socket.leave(socket.room);
-			console.log(room.length);
+			var chatters = this.room.length;
 		});
 
 
