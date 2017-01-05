@@ -158,6 +158,9 @@ $(function(){
 
 			showMessage("somebodyLeft", data);
 			chats.empty();
+			if (room.length === 0){
+				admin = 0;
+			}
 		}
 
 	});
@@ -267,10 +270,16 @@ $(function(){
 
 	function showMessage(status,data){
 
+		if(status === "chatclosed"){
+
+			section.children().css('display', 'none');
+			onConnect.fadeIn(600);
+		}
+		
 		if(status === "connected"){
 
 			section.children().css('display', 'none');
-			onConnect.fadeIn(1200);
+			onConnect.fadeIn(600);
 		}
 
 		else if(status === "inviteSomebody"){
@@ -278,15 +287,15 @@ $(function(){
 			// Set the invite link content
 			$("#link").text(window.location.href);
 
-			onConnect.fadeOut(1200, function(){
-				inviteSomebody.fadeIn(1200);
+			onConnect.fadeOut(600, function(){
+				inviteSomebody.fadeIn(600);
 			});
 		}
 
 		else if(status === "personinchat"){
 
 			onConnect.css("display", "none");
-			personInside.fadeIn(1200);
+			personInside.fadeIn(600);
 
 			chatNickname.text(data.user);
 			ownerImage.attr("src",data.avatar);
@@ -295,9 +304,9 @@ $(function(){
 		else if(status === "youStartedChatWithNoMessages") {
 
 			left.fadeOut(1200, function() {
-				inviteSomebody.fadeOut(1200,function(){
-					noMessages.fadeIn(1200);
-					footer.fadeIn(1200);
+				inviteSomebody.fadeOut(600,function(){
+					noMessages.fadeIn(600);
+					footer.fadeIn(600);
 				});
 			});
 
@@ -307,9 +316,9 @@ $(function(){
 
 		else if(status === "heStartedChatWithNoMessages") {
 
-			personInside.fadeOut(1200,function(){
-				noMessages.fadeIn(1200);
-				footer.fadeIn(1200);
+			personInside.fadeOut(600,function(){
+				noMessages.fadeIn(600);
+				footer.fadeIn(600);
 			});
 
 			friend = data.users[0];
@@ -329,13 +338,13 @@ $(function(){
 
 			section.children().css('display','none');
 			footer.css('display', 'none');
-			left.fadeIn(1200);
+			left.fadeIn(600);
 		}
 
 		else if(status === "tooManyPeople") {
 
 			section.children().css('display', 'none');
-			tooManyPeople.fadeIn(1200);
+			tooManyPeople.fadeIn(600);
 		}
 	}
 
