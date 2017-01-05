@@ -266,14 +266,14 @@ $(function(){
 	}
 
 	function showMessage(status,data){
-
-		if(status === "chatclosed"){
+		
+		if(status === "connected"){
 
 			section.children().css('display', 'none');
 			onConnect.fadeIn(600);
 		}
-		
-		if(status === "connected"){
+
+		else if(status === "chatclosed"){
 
 			section.children().css('display', 'none');
 			onConnect.fadeIn(600);
