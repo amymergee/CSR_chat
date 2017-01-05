@@ -158,7 +158,8 @@ $(function(){
 
 			showMessage("somebodyLeft", data);
 			chats.empty();
-			if (room.length === 0){
+			data.number --;
+			if (data.number < 0){
 				admin = 0;
 			}
 		}
