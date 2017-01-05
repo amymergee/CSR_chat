@@ -273,12 +273,6 @@ $(function(){
 			onConnect.fadeIn(600);
 		}
 
-		else if(status === "chatclosed"){
-
-			section.children().css('display', 'none');
-			onConnect.fadeIn(600);
-		}
-
 		else if(status === "inviteSomebody"){
 
 			// Set the invite link content
@@ -343,6 +337,13 @@ $(function(){
 			section.children().css('display', 'none');
 			tooManyPeople.fadeIn(600);
 		}
+
+		else{
+
+			section.children().css('display', 'none');
+			onConnect.fadeIn(600);
+		}
+
 	}
 
 });
