@@ -266,8 +266,14 @@ $(function(){
 	}
 
 	function showMessage(status,data){
+
+		if (status === "closed"){
+
+			section.children().css('display', 'none');
+			onConnect.fadeIn(600);
+		}
 		
-		if(status === "connected"){
+		else if(status === "connected"){
 
 			section.children().css('display', 'none');
 			onConnect.fadeIn(600);
