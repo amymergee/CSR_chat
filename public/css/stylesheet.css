@@ -148,7 +148,7 @@ body {
 
 .closed {
 	text-align:center;
-	display: none;
+	display: block;
 	margin:0px auto;
 	width: 700px;
 	height: 400px;
@@ -156,6 +156,11 @@ body {
 	border-radius: 3px;
 	box-shadow:0px 3px 3px #e3e4e6;
 	color: #637277;
+}
+.chatClosed {
+	text-align: left;
+	float: right;
+	margin: 65px 165px 0 0;
 }
 
 /* ------ Connected ------*/
@@ -620,6 +625,9 @@ footer {
 
 /* ---------------------- HIDE -------------------------- */
 
+.closed {
+	display: none;
+}
 
 .connected {
 	display: none;
